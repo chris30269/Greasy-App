@@ -9,7 +9,7 @@ var sampleData = {
          "didAttend":false,
          "late":0,
          "pointChange":-10,
-         "partialScore":90,
+         "partialScore":100,
          "explanation":"Full deduction for unexcused absence from event"
       },
       {  
@@ -177,7 +177,7 @@ var sampleData = {
          "didAttend":true,
          "late":0,
          "pointChange":0,
-         "partialScore":-35,
+         "partialScore":35,
          "explanation":"No point change for attending required event"
       },
       {  
@@ -189,7 +189,7 @@ var sampleData = {
          "didAttend":false,
          "late":0,
          "pointChange":0,
-         "partialScore":-35,
+         "partialScore":35,
          "explanation":"Did not attend and not expected to"
       },
       {  
@@ -213,7 +213,7 @@ var sampleData = {
          "didAttend":true,
          "late":0,
          "pointChange":0,
-         "partialScore":-35,
+         "partialScore":75,
          "explanation":"No point change for attending required event"
       },
       {  
@@ -285,7 +285,7 @@ var sampleData = {
          "didAttend":true,
          "late":0,
          "pointChange":0,
-         "partialScore":-160,
+         "partialScore":100,
          "explanation":"No point change for attending required event"
       },
       {  
@@ -297,7 +297,7 @@ var sampleData = {
          "didAttend":false,
          "late":0,
          "pointChange":-10,
-         "partialScore":-170,
+         "partialScore":0,
          "explanation":"Full deduction for unexcused absence from event"
       }
    ],

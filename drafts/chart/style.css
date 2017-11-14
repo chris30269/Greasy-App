@@ -1,0 +1,12 @@
+body{
+	background-color: #fafafa;
+}
+.line{
+	stroke: orange;
+	fill: url("#attendanceGradient");
+	stroke-width:2;
+}
+
+.attendanceDot{
+	fill:orange;
+}

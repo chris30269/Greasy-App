@@ -10,6 +10,7 @@
 	<h2>Attendance</h2>
 	<p>Right now you have a {{score}} in Glee Club.</p>
 	<svg></svg>
+	<div id="tooltip"><p>hi</p></div>
 </body>
 <script type="text/javascript">
 	var margin = {
@@ -30,14 +31,17 @@
 		.attr("id", "attendanceGradient")
 		.attr("gradientTransform", "rotate(90)");
 	gradient.append("stop")
-			.attr("offset", "0%")
-			.attr("stop-color", "magenta")
+		.attr("offset", "0%")
+		.attr("stop-color", "magenta")
 	gradient.append("stop")
-			.attr("offset", "10%")
-			.attr("stop-color", "yellow")
+		.attr("offset", "10%")
+		.attr("stop-color", "yellow")
 	gradient.append("stop")
-			.attr("offset", "100%")
-			.attr("stop-color", "orange");
+		.attr("offset", "100%")
+		.attr("stop-color", "orange");
+	var div = d3.select("#tooltip")
+	    .attr("class", "tooltip")
+	    .attr("class", "hidden");
 	var parseTime = d3.timeParse("%d-%b-%y");
 	sampleData.attendance.forEach(function (d){
 		d.date = new Date(d.date*1000);
@@ -98,7 +102,20 @@
 		})
 		.attr("r", function (d) { return 4; })
 		.attr("class", "attendanceDot")
-		.attr("stroke-width", 3);
+		.attr("stroke-width", 3)
+		.on("mouseover", function(d){
+			div.attr("class", "shown");
+			div.append("p").html(d.name);
+			div.append("p").html(d.date);
+			div.append("p").html(d.pointChange+" points");
+			div.append("p").html(d.partialScore+"%");
+			div.append("p").html(d.explanation);
+			div.attr("style", "position:absolute;left:"+d3.event.pageX+"px;top:"+d3.event.pageY+"px;");
+		})
+		.on("mouseout", function(d){
+			div.attr("class", "hidden");
+			div.html("");
+		});
 
 
 

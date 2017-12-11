@@ -20,6 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        this.setupVue();
+        drawAttendanceGraph();
     },
 
     // deviceready Event Handler
@@ -33,7 +35,18 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
-        drawAttendanceGraph();
+        
+    },
+    setupVue: function(){
+        var vm = new Vue({
+            el: "#vue",
+            data: function(){
+                return {
+                    firstName: "chris",
+                    score: 80
+                };
+            }
+        });
     }
 };
 

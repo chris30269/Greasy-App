@@ -21,10 +21,10 @@ function drawAttendanceGraph(){
 		.attr("stop-color", "magenta")
 	gradient.append("stop")
 		.attr("offset", "10%")
-		.attr("stop-color", "yellow")
+		.attr("stop-color", "cyan")
 	gradient.append("stop")
 		.attr("offset", "100%")
-		.attr("stop-color", "orange");
+		.attr("stop-color", "grey");
 	var div = d3.select("#tooltip")
 	    .attr("class", "tooltip")
 	    .attr("class", "hidden");

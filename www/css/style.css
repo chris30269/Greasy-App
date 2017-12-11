@@ -1,11 +1,14 @@
+body{
+	background-color: #fafafa;
+}
 .line{
-	stroke: orange;
+	stroke: grey;
 	fill: url("#attendanceGradient");
 	stroke-width:2;
 }
 
 .attendanceDot{
-	fill:orange;
+	fill:grey;
 }
 
 .hidden{
@@ -21,4 +24,11 @@
 	padding: 3px;
 	border: 1px solid rgba(0,0,0,.5);
 	border-radius: 3px;
+}
+
+.name{
+	text-transform: capitalize;
+}
+.score{
+	font-weight: bold;
 }

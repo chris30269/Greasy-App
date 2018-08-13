@@ -16,12 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        this.setupVue();
-        drawAttendanceGraph();
+        document.addEventListener('prechange', function(event) {
+          document.querySelector('ons-toolbar .center')
+            .innerHTML = event.tabItem.getAttribute('label');
+        });
+        document.addEventListener('init', function(event) {
+          if (event.target.matches('#home')) {
+            // Set up content...
+            drawAttendanceGraph();
+            document.querySelector("#name").innerHTML = "George";
+            document.querySelector("#score").innerHTML = "80";
+          }
+        }, false);
     },
 
     // deviceready Event Handler
@@ -36,17 +47,6 @@ var app = {
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
         
-    },
-    setupVue: function(){
-        var vm = new Vue({
-            el: "#vue",
-            data: function(){
-                return {
-                    firstName: "chris",
-                    score: 80
-                };
-            }
-        });
     }
 };
 

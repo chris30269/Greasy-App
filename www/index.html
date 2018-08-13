@@ -34,22 +34,35 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bulma.css">
+        <link rel="stylesheet" type="text/css" href="css/onsenui.min.css">
+        <link rel="stylesheet" type="text/css" href="css/onsen-css-components.min.css">
         <title>Greasy App</title>
     </head>
     <body>
-        <div id="vue">
-            <h1>Greasy App</h1>
-            <p>Hi <span class="name">{{firstName}}</span>.</p>
-            <h2>Attendance</h2>
-            <p>Right now you have a <span class="score">{{score}}</span> in Glee Club.</p>
-            <svg></svg>
+        <div id="container">
+            <ons-page>
+              <ons-toolbar>
+                <div class="center">Home</div>
+              </ons-toolbar>
+
+              <ons-tabbar swipeable position="auto">
+                <ons-tab page="home.html" label="Home" icon="ion-home, material:md-home" active></ons-tab>
+                <ons-tab page="events.html" label="Events" icon="ion-calendar, material:md-calendar"></ons-tab>
+                <ons-tab page="music.html" label="Music" icon="md-calendar"></ons-tab>
+                <ons-tab page="settings.html" label="Settings" icon="md-settings"></ons-tab>
+              </ons-tabbar>
+            </ons-page>
+
+
+
         </div>
         <div id="tooltip"><p>hi</p></div>
-        <script src="js/lib/d3.v4.min.js"></script>
+        <script type="text/javascript" src="js/lib/d3.v4.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script type="text/javascript" src="js/sample.js"></script>
         <script type="text/javascript" src="js/attendanceGraph.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/lib/onsenui.min.js"></script>
     </body>
 </html>

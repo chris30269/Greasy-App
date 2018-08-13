@@ -3,7 +3,7 @@ function drawAttendanceGraph(){
 		"top":20,
 		"right":20,
 		"bottom":20,
-		"left":30
+		"left":24
 	};
 	var width = window.innerWidth;
 	var height = 400;
@@ -47,7 +47,8 @@ function drawAttendanceGraph(){
 
 	svg.append("g")
 	  .attr("transform", "translate(0," + (height-margin.bottom) + ")")
-	  .call(d3.axisBottom(x));
+	  .call(d3.axisBottom(x)
+	  	.ticks(3));
 	svg.append("g")
 	    .attr("transform", "translate("+ margin.left +", 0)")
 	  .call(d3.axisLeft(y));
